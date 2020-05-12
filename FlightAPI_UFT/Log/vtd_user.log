@@ -1,0 +1,77 @@
+2020-01-10 15:47:46,650 [1] INFO  - Loaded appender: FileAppenderExternal
+2020-01-10 15:47:46,667 [1] INFO  - Loaded appender: UserLoggerAppender
+2020-01-10 15:47:46,667 [1] INFO  - Loaded appender: FileAppenderInternal
+2020-01-10 15:47:46,667 [1] INFO  - Loaded appender: FileAppenderExternal
+2020-01-10 15:47:46,667 [1] INFO  - Loaded appender: UserLoggerAppender
+2020-01-10 15:47:46,669 [1] INFO  - Loaded appender: FileAppenderInternal
+2020-01-10 15:47:47,178 [12] INFO  - Step 'Start' : Step 'Start' started
+2020-01-10 15:47:47,276 [12] INFO  - Step 'Start' ended successfully
+2020-01-10 15:47:47,278 [12] INFO  - Step 'Test Flow' : Step 'Test Flow' started
+2020-01-10 15:47:47,284 [12] INFO  - Step 'Iteration 1' : Step 'Iteration 1' started
+2020-01-10 15:47:47,287 [12] INFO  - Step 'CreateFlightOrder' : Step 'CreateFlightOrder' started
+2020-01-10 15:47:47,309 [12] INFO  - 
+Request:
+
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance">
+  <Body>
+    <CreateFlightOrder xmlns="HP.SOAQ.SampleApp">
+      <FlightOrder>
+        <Class>Business</Class>
+        <CustomerName>John Smith</CustomerName>
+        <DepartureDate>2020-06-01T00:00:00-06:00</DepartureDate>
+        <FlightNumber>15273</FlightNumber>
+        <NumberOfTickets>1</NumberOfTickets>
+      </FlightOrder>
+    </CreateFlightOrder>
+  </Body>
+</Envelope>
+
+2020-01-10 15:47:47,367 [12] INFO  - URL: http://localhost:8000/Flights_SOAP
+2020-01-10 15:47:47,444 [12] INFO  - Returning the response to the previous channel
+2020-01-10 15:47:47,451 [12] INFO  - 
+Response:
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <CreateFlightOrderResponse xmlns="HP.SOAQ.SampleApp">
+      <CreateFlightOrderResult xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <OrderNumber>89</OrderNumber>
+        <TotalPrice>299.6</TotalPrice>
+      </CreateFlightOrderResult>
+    </CreateFlightOrderResponse>
+  </s:Body>
+</s:Envelope>
+
+2020-01-10 15:47:47,480 [12] INFO  - Structural Validation: True
+2020-01-10 15:47:47,489 [12] INFO  - Step 'CreateFlightOrder' ended successfully
+2020-01-10 15:47:47,491 [12] INFO  - Step 'DeleteFlightOrder' : Step 'DeleteFlightOrder' started
+2020-01-10 15:47:47,496 [12] INFO  - 
+Request:
+
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Body>
+    <DeleteFlightOrder xmlns="HP.SOAQ.SampleApp">
+      <OrderNumber>89</OrderNumber>
+    </DeleteFlightOrder>
+  </Body>
+</Envelope>
+
+2020-01-10 15:47:47,499 [12] INFO  - URL: http://localhost:8000/Flights_SOAP
+2020-01-10 15:47:47,511 [12] INFO  - Returning the response to the previous channel
+2020-01-10 15:47:47,513 [12] INFO  - 
+Response:
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Body>
+    <DeleteFlightOrderResponse xmlns="HP.SOAQ.SampleApp">
+      <DeleteFlightOrderResult>true</DeleteFlightOrderResult>
+    </DeleteFlightOrderResponse>
+  </s:Body>
+</s:Envelope>
+
+2020-01-10 15:47:47,520 [12] INFO  - Structural Validation: True
+2020-01-10 15:47:47,525 [12] INFO  - Step 'DeleteFlightOrder' ended successfully
+2020-01-10 15:47:47,528 [12] INFO  - Step 'Iteration 1' ended successfully
+2020-01-10 15:47:47,532 [12] INFO  - Step 'Test Flow' ended successfully
+2020-01-10 15:47:47,534 [12] INFO  - Step 'End' : Step 'End' started
+2020-01-10 15:47:47,545 [12] INFO  - Step 'End' ended successfully

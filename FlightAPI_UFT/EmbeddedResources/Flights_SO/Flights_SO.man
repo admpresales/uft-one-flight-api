@@ -4,8 +4,8 @@
   <Name>Flights_SO</Name>
   <Type>WSDL</Type>
   <Version>1</Version>
-  <CreationDate>2019-08-30T09:58:19.5692663-06:00</CreationDate>
-  <UpdateDate>2019-08-30T09:58:19.5692663-06:00</UpdateDate>
+  <CreationDate>2019-08-30T15:58:19.5692663+00:00</CreationDate>
+  <UpdateDate>2019-08-30T15:58:19.5692663+00:00</UpdateDate>
   <LoaderID>SignatureResourceHandler</LoaderID>
   <MetaDataSignatureFile>7844af91-f51f-4b73-870e-fdfb2ae69a7b.xml</MetaDataSignatureFile>
   <TestResourceId>7844af91-f51f-4b73-870e-fdfb2ae69a7b</TestResourceId>
@@ -18,7 +18,7 @@
         <string>RepositoryPath</string>
       </Key>
       <Value>
-        <string>C:\Users\demo\Documents\Unified Functional Testing\FlightAPI_UFT\EmbeddedResources</string>
+        <string>C:\Users\demo\Documents\UFT One\DevOps Container\uft-one-flight-api\FlightAPI_UFT\EmbeddedResources</string>
       </Value>
     </Item>
     <Item>
@@ -26,7 +26,7 @@
         <string>ResourceOrigin</string>
       </Key>
       <Value>
-        <string>C:\Users\demo\Documents\Unified Functional Testing\FlightAPI_UFT\EmbeddedResources\Flights_SO</string>
+        <string>C:\Users\demo\Documents\UFT One\DevOps Container\uft-one-flight-api\FlightAPI_UFT\EmbeddedResources\Flights_SO</string>
       </Value>
     </Item>
     <Item>

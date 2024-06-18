@@ -118,6 +118,16 @@
             _flow.StartActivity1.JMS.TimeoutOptions = @"DN_User_defined_Timeout";
             _flow.StartActivity1.JMS.UserTimeout = @"20";
             _flow.StartActivity1.JMS.GenerateAutoSelector = @"No";
+            _flow.StartActivity1.KafkaSSL = new HP.ST.Fwk.KafkaFWK.KafkaSSLProperties();
+            _flow.StartActivity1.IsKafkaUsed = false;
+            _flow.StartActivity1.KafkaSSL.StrEnableSSL = @"No";
+            _flow.StartActivity1.KafkaSSL.SSLCALocation = @"";
+            _flow.StartActivity1.KafkaSSL.SSLClientCertificateLocation = @"";
+            _flow.StartActivity1.KafkaSSL.SSLClientKeyLocation = @"";
+            _flow.StartActivity1.KafkaSASL = new HP.ST.Fwk.KafkaFWK.KafkaSASLProperties();
+            _flow.StartActivity1.KafkaSASL.StrEnableSASL = @"No";
+            _flow.StartActivity1.KafkaSASL.StrMechanism = @"GSSAPI";
+            _flow.StartActivity1.KafkaSASL.StrServiceName = @"";
             this.Activities.Add (_flow.StartActivity1);
             _flow.Loop2.ConditionAsString = @"Run for 1 iteration";
             _flow.Loop2.NumberOfIterations = (int)1;
@@ -145,8 +155,8 @@
       <FlightOrder>
         <Class>Business</Class>
         <CustomerName>John Smith</CustomerName>
-        <DepartureDate>2020-06-01T00:00:00-06:00</DepartureDate>
-        <FlightNumber>15273</FlightNumber>
+        <DepartureDate>2033-06-01T06:00:00+00:00</DepartureDate>
+        <FlightNumber>12430</FlightNumber>
         <NumberOfTickets>1</NumberOfTickets>
       </FlightOrder>
     </CreateFlightOrder>
@@ -156,7 +166,7 @@
             _flow.StServiceCallActivity5.Comment = @"";
             _flow.StServiceCallActivity5.IconPath = @"AddIns\ServiceTest\WSImportTechnology\ictb_service_operations_16.png";
             _flow.StServiceCallActivity5.Name = @"CreateFlightOrder";
-            _flow.StServiceCallActivity5.TransportProtocol.SOAPProperties.EndpointAddress = String.IsNullOrEmpty(_context.ResourceManager.GetValue(@"{Step.GeneralProperties.StServiceCallActivity5.TransportProtocol.SOAPProperties.EndpointAddress}")) ? @"http://localhost:8000/Flights_SOAP" : _context.ResourceManager.GetValue(@"{Step.GeneralProperties.StServiceCallActivity5.TransportProtocol.SOAPProperties.EndpointAddress}");
+            _flow.StServiceCallActivity5.TransportProtocol.SOAPProperties.EndpointAddress = _context.ResourceManager == null || String.IsNullOrEmpty(_context.ResourceManager.GetValue(@"{Step.GeneralProperties.StServiceCallActivity5.TransportProtocol.SOAPProperties.EndpointAddress}")) ? @"http://localhost:8000/Flights_SOAP" : _context.ResourceManager.GetValue(@"{Step.GeneralProperties.StServiceCallActivity5.TransportProtocol.SOAPProperties.EndpointAddress}");
             _flow.StServiceCallActivity5.TransportProtocol.SOAPProperties.SoapAction = @"HP.SOAQ.SampleApp/IFlightsSoapService/CreateFlightOrder";
             _flow.StServiceCallActivity5.TransportProtocol.SOAPProperties.ContentType = @"text/xml; charset=utf-8";
             _flow.StServiceCallActivity5.TransportProtocol.SOAPProperties.Timeout = (int)100000;
@@ -193,7 +203,7 @@
             _flow.StServiceCallActivity8.Comment = @"";
             _flow.StServiceCallActivity8.IconPath = @"AddIns\ServiceTest\WSImportTechnology\ictb_service_operations_16.png";
             _flow.StServiceCallActivity8.Name = @"DeleteFlightOrder";
-            _flow.StServiceCallActivity8.TransportProtocol.SOAPProperties.EndpointAddress = String.IsNullOrEmpty(_context.ResourceManager.GetValue(@"{Step.GeneralProperties.StServiceCallActivity8.TransportProtocol.SOAPProperties.EndpointAddress}")) ? @"http://localhost:8000/Flights_SOAP" : _context.ResourceManager.GetValue(@"{Step.GeneralProperties.StServiceCallActivity8.TransportProtocol.SOAPProperties.EndpointAddress}");
+            _flow.StServiceCallActivity8.TransportProtocol.SOAPProperties.EndpointAddress = _context.ResourceManager == null || String.IsNullOrEmpty(_context.ResourceManager.GetValue(@"{Step.GeneralProperties.StServiceCallActivity8.TransportProtocol.SOAPProperties.EndpointAddress}")) ? @"http://localhost:8000/Flights_SOAP" : _context.ResourceManager.GetValue(@"{Step.GeneralProperties.StServiceCallActivity8.TransportProtocol.SOAPProperties.EndpointAddress}");
             _flow.StServiceCallActivity8.TransportProtocol.SOAPProperties.SoapAction = @"HP.SOAQ.SampleApp/IFlightsSoapService/DeleteFlightOrder";
             _flow.StServiceCallActivity8.TransportProtocol.SOAPProperties.ContentType = @"text/xml; charset=utf-8";
             _flow.StServiceCallActivity8.TransportProtocol.SOAPProperties.Timeout = (int)100000;
@@ -295,7 +305,7 @@
         {   
     		if (useReport)
     		{             
-    			string reportTemplateDir = Path.Combine(ServiceTestRunner.GetInstallPath(),@"bin\ReportResources");                
+    			string reportTemplateDir = Path.Combine(ServiceTestRunner.GetInstallPath(), "bin", "ReportResources");
     			try
     			{
             		CopyDirectory(reportTemplateDir, reportDBDir);
